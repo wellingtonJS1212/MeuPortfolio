@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Portfólio</title>
+</head>
+
+<body>
+
+    <div class="particulas"></div>
+
+    <nav class="navegacao">
+        <ul class="menu">
+            <li><a href="#inicio" class="menu-link">Início</a></li>
+            <li><a href="#sobre" class="menu-link">Sobre</a></li>
+            <li><a href="#projetos" class="menu-link">Projetos</a></li>
+            <li><a href="#contato" class="menu-link">Contato</a></li>
+        </ul>
+    </nav>
+
+    <main id="inicio" class="cabecalho">
+
+        <img src="imgs/eu.jpag.jpg" alt="foto principal do site" class="foto-perfil">
+        <h1>Wellington José</h1>
+        <p class="dev">Desenvolvedor Full Stack kkkkkkkkkkkkk</p>
+
+    </main>
+
+    <section id="sobre" class="sobre">
+        <h2 class="sobre-titulo">Sobre Min</h2>
+        <div class="sobre-caixa">
+            <p class="quem-sou-eu">Eu me chamo, Wellington, estou em transição de carreira para a área de T.I, estou
+                desenvolvendo FRONT END, e tenho alguns projetos em desenvolvimento, gosto de trabalhar em equipe, amo
+                descobrir.</p>
+        </div>
+    </section>
+
+    <section id="projetos" class="projetos">
+        <h2 class="projeto-titulo">Meus Projetos</h2>
+        <div class="projetos-caixa">
+
+            <div class="projetos-cards">
+                <img src="imgs/lista-contato.png" alt="lista de contatos" class="img-projetos">
+
+                <div class="caixa-texto-projetos">
+                    <h3 class="info-projetos">Lista de Contatos</h3>
+                    <p class="paragrafo-projetos">Uma lista de contatos web, que lhe ajuda a ter seus contatos a um
+                        click, ajudamos a protejer seus contatos corporativos, não deixe seus contatos mais importantes
+                        estarem vulneráveis.</p>
+                </div>
+            </div>
+
+            <div class="projetos-cards">
+                <img src="imgs/site-cursos.png" alt="site de cursos" class="img-projetos">
+
+                <div class="caixa-texto-projetos">
+                    <h3 class="info-projetos">Site de Cursos</h3>
+                    <p class="paragrafo-projetos">Apresentamos um site que ira te proporcionar oportunidades para uma
+                        carreira promissora, temos diversos cursos que vão te levar para o futuro brilhante.</p>
+                </div>
+            </div>
+
+            <div class="projetos-cards">
+                <img src="imgs/planos-operadora.png" alt="site de planos de operadora" class="img-projetos">
+
+                <div class="caixa-texto-projetos">
+                    <h3 class="info-projetos">Site de Planos</h3>
+                    <p class="paragrafo-projetos">Tenha um site com os melhores preços para seus clientes, oferecendo o
+                        melhor plano, com os melhores preços, mantenha-os atualizados.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="contato" class="contato">
+        <h2 class="contato-titulo">Entre em Contato</h2>
+
+        <form class="formulario-contato" id="formulario" onsubmit="enviarwhattsapp(event)">
+            <div class="nome-fomr">
+                <input placeholder="Nome" class="campo-form" id="nome">
+            </div>
+
+            <div class="nome-fomr">
+                <textarea class="campo-form tamanho-area" placeholder="Digite sua mensagem" rows="5"
+                    id="mensagem"></textarea>
+            </div>
+
+            <button type="submit" class="botao-form">Enviar Whatsapp</button>
+        </form>
+
+        <section class="RedeSocial">
+            <a href="https://www.linkedin.com/feed/?trk=guest_homepage-basic_nav-header-signin">Linkedin</a>
+            
+            <a href="#">GitHube</a>
+        </section>
+
+    </section>
+
+    <script>
+        function enviarwhattsapp(event) {
+
+            event.preventDefault();
+
+            const nome = document.getElementById("nome").value;
+            const mensagem = document.getElementById("mensagem").value;
+            const telefone = '+5581999995176'
+
+            const texto = `Olá! me chamo ${nome}, ${mensagem}`;
+            const msgFormatada = encodeURIComponent(texto);
+
+            const url = `https://wa.me/${telefone}?text=${msgFormatada}`;
+            window.open(url, '_blank');
+        }
+    </script>
+
+</body>
+
+</html>
